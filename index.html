@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website with Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main">
+        <section id="homepage" class="home">
+            <div class="home-content">
+                <h1>Welcome to the Quiz Game!</h1>
+                <button id="start-btn" class="btn">Start Quiz</button>
+            </div>
+        </section>
+        <section id="quiz-container" class="container hidden">
+            <h1>Quiz Game</h1>
+            <div id="question-container">
+                <p id="question">Question text</p>
+                <div class="answer-container">
+                    <button class="answer-btn">Answer 1</button>
+                    <button class="answer-btn">Answer 2</button>
+                    <button class="answer-btn">Answer 3</button>
+                    <button class="answer-btn">Answer 4</button>
+                </div>
+            </div>
+            <button id="next-btn" class="btn hidden">Next</button>
+        </section>
+        <section id="result-container" class="container hidden">
+            <h1>Quiz Completed!</h1>
+            <p id="result-text">You scored X out of Y.</p>
+            <button id="restart-btn" class="btn">Restart Quiz</button>
+        </section>
+    </main>
+
+    <!-- Audio element -->
+    <audio id="background-music" src="c:\Users\sovis\Downloads\LAKEY INSPIRED - Better Days.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
