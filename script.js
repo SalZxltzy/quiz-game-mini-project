@@ -16,7 +16,7 @@ const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const backgroundMusic = document.getElementById("background-music");
 
-backgroundMusic.volume = 0.1; 
+backgroundMusic.volume = 0.3; 
 
 startButton.addEventListener("click", startQuiz);
 nextButton.addEventListener("click", moveToNextQuestion);
@@ -26,7 +26,7 @@ function startQuiz() {
     homepage.classList.add("hidden");
     quizContainer.classList.remove("hidden");
     showQuestion(questions[currentQuestionIndex]);
-    backgroundMusic.play(); 
+    playMusic(); 
 }
 
 function showQuestion(question) {
@@ -63,14 +63,24 @@ function showResult() {
     quizContainer.classList.add("hidden");
     resultContainer.classList.remove("hidden");
     resultText.textContent = `You scored ${score} out of ${questions.length}.`;
-    backgroundMusic.pause(); 
-    backgroundMusic.currentTime = 0; 
+    stopMusic();
 }
 
 function restartQuiz() {
     resultContainer.classList.add("hidden");
     homepage.classList.remove("hidden");
+    stopMusic();
     currentQuestionIndex = 0;
     score = 0;
-    backgroundMusic.play(); 
+}
+
+function playMusic() {
+    backgroundMusic.play().catch(error => {
+        console.error('Error playing background music:', error);
+    });
+}
+
+function stopMusic() {
+    backgroundMusic.pause(); 
+    backgroundMusic.currentTime = 0; 
 }
