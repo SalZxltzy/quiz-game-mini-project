@@ -16,7 +16,7 @@ const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const backgroundMusic = document.getElementById("background-music");
 
-backgroundMusic.volume = 0.1; // Set volume level (0.0 - 1.0)
+backgroundMusic.volume = 0.1; 
 
 startButton.addEventListener("click", startQuiz);
 nextButton.addEventListener("click", moveToNextQuestion);
@@ -26,7 +26,7 @@ function startQuiz() {
     homepage.classList.add("hidden");
     quizContainer.classList.remove("hidden");
     showQuestion(questions[currentQuestionIndex]);
-    backgroundMusic.play(); // Start the background music automatically
+    backgroundMusic.play(); 
 }
 
 function showQuestion(question) {
